@@ -22,3 +22,5 @@ GET: /
 1. [resend](https://resend.com/) ---- 3000 -> $0
 2. [Gmail API](https://developers.google.com/gmail/api/reference/quota) ---- 3000 -> $0 (but more than 3 mails/s == 429)
 3. [AWS SES](https://aws.amazon.com/ses/pricing/) ---- 3000 -> $0.3
+
+> railway bailed on me commit so that i can deploy
