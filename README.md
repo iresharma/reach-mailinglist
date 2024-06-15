@@ -2,6 +2,8 @@
 
 Microservice for recording and handling mailing list.
 
+## Archived in favor of a self host of listmonk
+
 ### TODO:
 
 GET: /
