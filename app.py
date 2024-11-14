@@ -24,9 +24,22 @@ def email_list():  # put application's code here
     plaintext = ""
     with open("static/text/email-list.txt", "r") as f:
         plaintext = f.read().replace("[email]", email)
-    send_mail(template, plaintext, email)
+    send_mail(template, plaintext, email, "Thank you for supporting Reach at early stages")
+    return "Thank you for supporting Reach", 200
+
+@app.route("/verify/mail")
+def verify_mail():
+    args = dict(request.args)
+    token = args.get("token", "")
+    mail = args.get("email", "")
+    subject = args.get("subject", "")
+    template = compile_mail("verify.html", args)
+    plaintext = ""
+    with open("static/text/verify.txt", "r") as f:
+        plaintext = f.read().replace("[token]", token)
+    send_mail(template, plaintext, mail, subject)
     return "Thank you for supporting Reach", 200
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5001)
